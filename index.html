@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <title>TCGPokemonShop</title>
+    <title>Document</title>
 </head>
 <body>
 
         <div class="header">
             <a href="#default" class="logo">POKEMON TRADE CARD</a>
             <div class="headerRight">   
-                <form class="searchBar">
-                    <input type="text" placeholder="Search..." name="Search"\>
+                <form class="searchBar" id="searchForm">
+                    <input type="text" name="query" id="query" />
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -64,9 +64,9 @@
                 </ul>   
             </ul>
             <div class="containerProductCard">
-                <div class="productCard">
+                <!-- <div class="productCard">
                     <div class="image">
-                        <img src="image/1.png" alt="Venusaur">
+                        <img src="image/1.png" alt="">
                     </div>
                     <div class="productText">
                         <h4 class="title">2021 Pokemon SWSH Celebrations Classic Collection Holo Venusaur #15 PSA 10 GEM This item was flash inserted on Nov 2, 2024.</h4>
@@ -88,7 +88,7 @@
 
                 <div class="productCard">
                     <div class="image">
-                        <img src="image/2.png" alt="Iron Boulder">
+                        <img src="image/2.png" alt="">
                     </div>
                     <div class="productText">
                         <h4 class="title">2024 Pokemon Scarlet & Violet Temporal Forces Iron Boulder ex #99 CGC 8.5 NM-MT+</h4>
@@ -110,7 +110,7 @@
 
                 <div class="productCard">
                     <div class="image">
-                        <img src="image/3.png" alt="Skeledirge">
+                        <img src="image/3.png" alt="">
                     </div>
                     <div class="productText">
                         <h4 class="title">2023 Pokemon Japanese SV Triplet Beat Skeledirge ex #102 CGC 10 PRISTINE</h4>
@@ -128,8 +128,10 @@
                             <p class="cityInfo"><span class="fa fa-map-marker"></span> Surabaya</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
+        <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+        <script src="app.js"></script>
 </body>
 </html>
