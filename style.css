@@ -79,7 +79,7 @@ form.searchBar button:hover {
     list-style-type: none;
     display: flex;
     align-items: center;
-    margin: 0;
+    margin-right: 5px;
     font-size: 13px;
 }
 
@@ -93,8 +93,11 @@ form.searchBar button:hover {
 }
 
 .sort p,
-.numbersOfPage p{
+.numbersOfPage p,
+.numbersOfProducts p
+{
     font-size: 12px;
+    margin: 0 5px; 
 }
 
 .dropBtn {
@@ -145,29 +148,40 @@ form.searchBar button:hover {
 .dropDownContentPage a:hover {
     background-color: #767676;
     color: white;
+    text-decoration: none;
 }
 
 .dropDown:hover .dropDownContentSort,
 .dropDown:hover .dropDownContentPage {
-    display: block;
+    display: block; 
 }
- 
+
 .pagination {
     display: inline-block;
+    
+}
+
+.pagination p{
+    font-size: 30px;
+    margin: 0 15px 10px 0;
+
 }
   
 .pagination a {
     color: black;
     float: left;
-    padding: 5px 10px;
     text-decoration: none;
 }
 
-.pagination a:hover {background-color: #ddd;}
+.pagination a:hover {
+    color: #767676;
+    text-decoration: none;
+}
 
 .containerProductCard{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
 .productCard{
@@ -175,26 +189,32 @@ form.searchBar button:hover {
     background-color:gainsboro;
     width: 700px;
     margin: 12px;
+    display:flex;
+    justify-content:space-between;
 
 }
 
 .productCard .image{
     margin-left: 10px;
     margin-top: 10px;
-    padding-right: 10px;
+    margin-bottom: 5px;
+    padding: 0;
     float: left;
 }
 
 .productCard .productText .price {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
     margin: 0;
     padding: 0;
 }
 
 .productText{
+    width: 100%;
     margin-right: 10px;
-    margin-top: -10px;
+    margin-left: 10px;
+    padding: 0;
+     
 }
 
 .productCard .productText .title{
