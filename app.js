@@ -1,36 +1,46 @@
 var apiUrl = 'https://api.pokemontcg.io/v2/cards';
-let itemsPerPage = 6;
-let currentPage = 1;
+let currentPage = localStorage.getItem("currentPage") 
+  ? parseInt(localStorage.getItem("currentPage"), 10) 
+  : 1;
+const pageSize = 10;
+const cardsTotal = 250;
 let cards = [];
 
 // Fungsi untuk mendapatkan data dari API
-async function fetchPokemonCards() {
+const fetchPokemonCards = async (page, size) => {
     try {
-        const response = await axios.get(apiUrl);
-        cards = response.data.data; // Simpan ke variabel global
-        loadCurrentPage(); // menampilkan halaman yang disimpan
+        const response = await axios.get(apiUrl, {
+            params: {
+                page: page,
+                pageSize: size,
+            },
+        });
+
+        cards = response.data.data;
+
+        // const resTotal = await axios.get(apiUrl);
+        // cardsTotal = resTotal.data.data;
+        
+        displayPokemonCards(cards);
+        localStorage.setItem("currentPage", page);
     } catch (error) {
         console.error("Error fetching data:", error);
     }
-}
+};
+
 
 // Fungsi untuk menampilkan kartu-kartu Pokemon
 function displayPokemonCards(cards) {
-    const totalPages = Math.ceil(cards.length / itemsPerPage);
-
-    const indexOfLastPage = currentPage * itemsPerPage;
-    const indexFirstPage = indexOfLastPage - itemsPerPage;
-    const currentItems = cards.slice(indexFirstPage, indexOfLastPage);
 
     const productContainer = document.getElementById('productContainer');
     productContainer.innerHTML = ''; // Hapus isi container
 
     const numbersOfProducts = document.querySelector('.numbersOfProducts li');
-    const startItem = indexFirstPage + 1;
-    const endItem = Math.min(indexOfLastPage, cards.length);
-    numbersOfProducts.innerHTML = `(<span>${startItem}</span> - <span>${endItem}</span> of <span>${cards.length}</span>)`;
+    const startItem = (currentPage - 1) * pageSize + 1;
+    const endItem = Math.min(currentPage * pageSize, cardsTotal);
+    numbersOfProducts.innerHTML = `(<span>${startItem}</span> - <span>${endItem}</span> of <span>${cardsTotal}</span>)`;
 
-    currentItems.forEach(card => {
+    cards.forEach(card => {
         const cardElement = document.createElement('div');
         cardElement.classList.add('productCard');
 
@@ -63,39 +73,19 @@ function displayPokemonCards(cards) {
     });
 }
 
-// Menyimpan currentPage ke LocalStorage
-const saveCurrentPage = (page) => {
-    localStorage.setItem('currentPage', page);
-};
-
-// Memuat currentPage dari LocalStorage
-const loadCurrentPage = () => {
-    const savedPage = localStorage.getItem('currentPage');
-    if (savedPage) {
-        currentPage = parseInt(savedPage, 10);
-    } else {
-        currentPage = 1;
-    }
-    displayPokemonCards(cards);
-};
-
 //pagination
 
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
-        saveCurrentPage(currentPage);
-        displayPokemonCards(cards);
+        fetchPokemonCards(currentPage, pageSize);
     }
 });
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-    if (currentPage < Math.ceil(cards.length / itemsPerPage)) {
         currentPage++;
-        saveCurrentPage(currentPage);
-        displayPokemonCards(cards);
-    }
+        fetchPokemonCards(currentPage, pageSize);
 });
 
 // Panggil fungsi untuk fetch dan menampilkan data kartu
-fetchPokemonCards();
+fetchPokemonCards(currentPage, pageSize);

@@ -15,7 +15,7 @@
 <body>
 
         <div class="header">
-            <a href="#default" class="logo">POKEMON TRADE CARD</a>
+            <a href="#default" class="logo" id="logo">POKEMON TRADE CARD</a>
             <div class="headerRight">   
                 <form class="searchBar" id="searchForm">
                     <input type="text" name="query" id="query" />
@@ -28,7 +28,7 @@
             <ul class="navSortContainer">
                 <ul class="numbersOfProducts">
                     <p>PRODUCTS:</p>
-                    <li>(<span id="startItem">Loading...</span> - <span id="endItem">Loading...</span> of <span id="totalItems">Loading...</span>)</li>
+                    <li><span id="startItem">Loading...</li>
                 </ul>
                 <ul class="sortOnRightButton">
                     <li class="sort">
@@ -70,71 +70,8 @@
                 </ul>   
             </ul>
             <div class="containerProductCard" id="productContainer">
-                <!-- <div class="productCard">
-                    <div class="image">
-                        <img src="image/1.png" alt="">
-                    </div>
-                    <div class="productText">
-                        <h4 class="title">2021 Pokemon SWSH Celebrations Classic Collection Holo Venusaur #15 PSA 10 GEM This item was flash inserted on Nov 2, 2024.</h4>
-                        <p class="price">$50</p>
-                        <p class="description">You are viewing one of the thousands of items in our 147th Weekly Sunday Auction, spanning all sports and genres, closing on the evening of November 10th 2024.  Extended bidding starts at 7:00PM PT.</p>
-                        <div class="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="location">
-                            <p class="bid"><span class="fa fa-hourglass-half"></span> 4H</p>
-                            <p class="cityInfo"><span class="fa fa-map-marker"></span> Depok</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="loader"></div> 
 
-                <div class="productCard">
-                    <div class="image">
-                        <img src="image/2.png" alt="">
-                    </div>
-                    <div class="productText">
-                        <h4 class="title">2024 Pokemon Scarlet & Violet Temporal Forces Iron Boulder ex #99 CGC 8.5 NM-MT+</h4>
-                        <p class="price">$5</p>
-                        <p class="description">You are viewing one of the thousands of items in our 147th Weekly Sunday Auction, spanning all sports and genres, closing on the evening of November 10th 2024.  Extended bidding starts at 7:00PM PT.</p>
-                        <div class="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="location">
-                            <p class="bid"><span class="fa fa-hourglass-half"></span> 5H</p>
-                            <p class="cityInfo"><span class="fa fa-map-marker"></span> Jakarta</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="productCard">
-                    <div class="image">
-                        <img src="image/3.png" alt="">
-                    </div>
-                    <div class="productText">
-                        <h4 class="title">2023 Pokemon Japanese SV Triplet Beat Skeledirge ex #102 CGC 10 PRISTINE</h4>
-                        <p class="price">$5</p>
-                        <p class="description">You are viewing one of the thousands of items in our 147th Weekly Sunday Auction, spanning all sports and genres, closing on the evening of November 10th 2024.  Extended bidding starts at 7:00PM PT.</p>
-                        <div class="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="location">
-                            <p class="bid"><span class="fa fa-hourglass-half"></span> 6H</p>
-                            <p class="cityInfo"><span class="fa fa-map-marker"></span> Surabaya</p>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
         <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
