@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Document</title>
+</head>
+<body>
+
+        <div class="header">
+            <a href="#default" class="logo" id="logo">POKEMON TRADE CARD</a>
+            <div class="headerRight">   
+                <form class="searchBar" id="searchForm">
+                    <input type="text" name="query" id="query" />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="productPage">
+            <div class="titleProductList">Product List</div>
+            <ul class="navSortContainer">
+                <ul class="numbersOfProducts">
+                    <p>PRODUCTS:</p>
+                    <li><span id="startItem">Loading...</li>
+                </ul>
+                <ul class="sortOnRightButton">
+                    <li class="sort">
+                        <p>SORT BY:</p>
+                        <div class="dropDown">
+                            <button class="dropBtn"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <div class="dropDownContentSort">
+                                <a href="#">Relevance</a>
+                                <a href="#">Price (Low to High)</a>
+                                <a href="#">Price (High to Low)</a>
+                                <a href="#">Top Selling</a>
+                            </div>
+                        </div>
+                        <!-- <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                              <button class="dropdown-item" type="button">Relevance</button>
+                              <button class="dropdown-item" type="button">Price (Low to High)</button>
+                              <button class="dropdown-item" type="button">Price (High to Low)</button>
+                            </div>
+                          </div> -->
+                    </li>
+                    <li class="numbersOfPage">
+                        <p>ITEMS PER PAGE:</p>
+                        <div class="dropDown">
+                            <button class="dropBtn"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <div class="dropDownContentPage">
+                                <a href="#" id="size10" class="active">10</a>
+                                <a href="#" id="size20">20</a>
+                                <a href="#" id="size30">30</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="pagination">
+                        <a href="#" id="prevBtn"><p>&laquo;</p></a>
+                        <a href="#" id="nextBtn"><p>&raquo;</p></a>
+                    </li>
+                </ul>   
+            </ul>
+            <div class="containerProductCard" id="productContainer">
+            <div class="loader"></div> 
+
+            </div>
+        </div>
+        <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+        <script src="app.js"></script>
+</body>
+</html>

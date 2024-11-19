@@ -1,0 +1,284 @@
+body{
+    margin: 0;
+    background-color: azure;
+}
+
+.productPage{
+    margin: 10px;
+}
+.header{
+    padding: 20px 10px;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: brown;
+    text-decoration: none;
+  }
+
+form.searchBar input[type=text]{
+    margin-top: -10px;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    outline: none;
+    float: left;
+    width: 500px;
+    background: #f1f1f1;
+}
+
+form.searchBar button{
+    margin-top: -10px;
+    padding:10px ;
+    border: 1px solid grey;
+    float: left;
+    font-size: 17px;
+    border-left: none;
+    width: 100px;
+    cursor: pointer;
+}
+
+form.searchBar button:hover {
+    background-color: white;
+}
+
+.headerRight{
+    float: right;
+}
+
+.titleProductList{
+    font-size: 25px;
+    color: brown;
+    font-weight: bolder;
+}
+
+.navSortContainer{
+    list-style-type: none;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin: 0;
+    padding: 0;
+}
+
+.numbersOfProducts{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: 13px;
+}
+
+.numbersOfProducts p {
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.sortOnRightButton{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+.sort, .numbersOfPage{
+    margin-right: 30px;
+}
+
+.sort, .numbersOfPage {
+    display: flex;
+    align-items: center;
+}
+
+.sort p,
+.numbersOfPage p,
+.numbersOfProducts p
+{
+    font-size: 12px;
+    margin: 0 5px; 
+}
+
+.dropBtn {
+    width: 33px;
+    height: 30px;
+    font-size: 15px;
+    margin-left:3px ;
+    border: none;
+    cursor: pointer;
+    background-color: #cbcbcb;
+    color: #4d4d4d;
+}
+
+.dropDown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropDownContentSort {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropDownContentPage {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropDownContentPage a {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.dropDownContentPage a.active {
+    background-color: #767676;
+    color: white;
+    border-color: #767676;
+}
+
+.dropDownContentSort a,
+.dropDownContentPage a {
+    background-color: white;
+    color: #767676;
+    padding: 12px 16px;
+    text-decoration: none;
+    border: none;
+    display: block;
+}
+
+.dropDownContentSort a:hover,
+.dropDownContentPage a:hover {
+    background-color: #767676;
+    color: white;
+    text-decoration: none;
+}
+
+.dropDown:hover .dropDownContentSort,
+.dropDown:hover .dropDownContentPage {
+    display: block; 
+}
+
+.pagination {
+    display: inline-block;
+    
+}
+
+.pagination p{
+    font-size: 30px;
+    margin: 0 15px 10px 0;
+
+}
+  
+.pagination a {
+    color: black;
+    float: left;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    color: #767676;
+    text-decoration: none;
+}
+
+.containerProductCard{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.productCard{
+    border-radius: 10px;
+    background-color:gainsboro;
+    width: 700px;
+    margin: 12px;
+    display:flex;
+    justify-content:space-between;
+
+}
+
+.productCard .image{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+}
+
+.productCard .productText .price {
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.productText{
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0;
+     
+}
+
+.productCard .productText .title{
+    margin-bottom: 0;
+}
+.productCard .productText .description{
+    margin: 0;
+}
+.productCard .productText .rating{
+    margin-top: 3px;
+}
+
+.productCard .productText .rating .checked{
+    color: orange;
+    margin-top: 10px;
+}
+
+.productCard .location{
+    display: flex;
+    flex-direction: row;
+}
+
+.productCard .location .cityInfo{
+    margin-left: 10px;
+}
+
+.productCard:hover {
+    background-color: #C7C8CC;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid brown;
+    border-bottom: 16px solid brown;
+    width: 90px;
+    height: 90px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 230px 0  0 700px;
+
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
